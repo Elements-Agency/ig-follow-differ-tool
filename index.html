@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Follower vs Following Tool</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <script src="src/js/file.js"></script>
+    <script src="src/js/compare.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Instagram Follower vs Following Tool</h1>
+            <p>Found on <a href="https://github.com/Elements-Agency/ig-follow-differ-tool">GitHub</a></p>
+        </div>
+
+        <div class="content">
+            <p>
+                This tool is to compare the followers and following of your own Instagram account.
+                Free of use.
+                No data is stored or submitted anywhere.
+                Please select your downloaded followers and following file.
+                If you need instructions on how to download your followers and following, please <a href="#instructions">see the instructions below</a>.
+            </p>
+
+            <div class="form">
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <label for="files">Select the followers and following files:</label>
+                    <br>
+                    <input type="file" name="files" id="files" accept=".html" multiple>
+                    <br>
+                    <br>
+                    <input type="submit" value="Compare" name="submit" id="submit">
+                </form>
+            </div>
+
+            <div class="result hide">
+                <div class="result-header">
+                    <h2>Results</h2>
+                </div>
+                <table class="result-content">
+                    <thead class="result-content-header">
+                        <tr>
+                            <th class="result-content-header-item">
+                                <h3>Username</h3>
+                            
+                            <th class="result-content-header-item">
+                                <h3>Followers</h3>
+                            </th>
+                            <th class="result-content-header-item">
+                                <h3>Following</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="result-content-body">
+                        <tr class="empty">
+                            <td class="result-content-body-item user">
+                                <a class="user-link" href="https://instagram.com/" target="_blank"></a>
+                            </td>
+                            <td class="result-content-body-item follower"></td>
+                            <td class="result-content-body-item following"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="instructions" id="instructions">
+                <h2>Instructions</h2>
+                <p>
+                    To download your followers and following, please follow the instructions below.
+                    <br>
+                    <br>
+                    <ol>
+                        <li>Go to your <a href="https://accountscenter.instagram.com/?entry_point=app_settings"><em>Meta Account Center</em></a></li>
+                        <li>Navigate to <a href="https://accountscenter.instagram.com/info_and_permissions/"><em>Your Information</em></a></li>
+                        <li>Select <a href="https://accountscenter.instagram.com/info_and_permissions/dyi/"><em>Download Your Information</em></a></li>
+                        <li>Click <em>Request Download</em></li>
+                        <li>Select the Instagram account you want to compare</li>
+                        <li>Selecting "<em>Select types of information</em>" is faster
+                            <ol>
+                                <li>If you select this, select <em>Followers and Following</em></li>
+                            </ol>
+                        </li>
+                        <li><em>Submit the Request</em></li>
+                        <li>Wait for the link to arrive by email (This may take some time)</li>
+                        <li>Once you receive the email, follow the link</li>
+                        <li>Download the file</li>
+                        <li>Unzip the file</li>
+                        <li>Open the folder, and navigate to <em>connections/followers_and_following</em> folder</li>
+                        <li>Select the <em>followers_1.html</em> and <em>following.html</em> file with this tool</li>
+                    </ol>
+                </p>
+        </div>
+
+        <div class="footer">
+            <p>Provided Free by <a href="https://webelements.agency" target="_blank"><img src="src/img/webelements-horizontal.png" title="Web Elements Small Business Web Design" alt="Web Elements"></a></p>
+        </div>
+    </div>
+</body>
+</html>
