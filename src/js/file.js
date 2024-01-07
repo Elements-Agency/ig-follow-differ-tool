@@ -49,9 +49,9 @@ function displayResults(resultsObj) {
         var followers = row.insertCell();
         var following = row.insertCell();
 
-        user.innerHTML = '<a href="https://instagram.com/' + results[i].user + '">' + results[i].user + '</a>';
-        followers.innerHTML = results[i].followers ? '<i class="bi bi-check-circle text-success">Yes</i>' : '<i class="bi bi-x-circle text-danger">No</i>';
-        following.innerHTML = results[i].following ? '<i class="bi bi-check-circle text-success">Yes</i>' : '<i class="bi bi-x-circle text-danger">No</i>';
+        user.innerHTML = '<strong><a class="text-decoration-none" href="https://instagram.com/' + results[i].user + '">' + results[i].user + '</a></strong>';
+        followers.innerHTML = results[i].followers ? '<span class="text-success"><i class="bi bi-check-circle fs-5 text"></i></span>' : '<span class="text-danger"><i class="bi bi-x-circle fs-5 text"></i></span>';
+        following.innerHTML = results[i].following ? '<span class="text-success"><i class="bi bi-check-circle fs-5 text"></i></span>' : '<span class="text-danger"><i class="bi bi-x-circle fs-5 text"></i></span>';
     }
 }
 
