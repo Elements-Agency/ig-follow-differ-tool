@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Instagram Follower vs Following Tool</title>
     <link rel="stylesheet" href="src/css/styles.css">
-    <script src="src/js/file.js"></script>
     <script src="src/js/compare.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -26,19 +26,28 @@
 
             <div class="form">
                 <form action="#" method="post" enctype="multipart/form-data">
-                    <label for="files">Select the followers and following files:</label>
+                    <label for="file-selector">Select the followers and following files:</label>
                     <br>
-                    <input type="file" name="files" id="files" accept=".html" multiple>
-                    <br>
-                    <br>
-                    <input type="submit" value="Compare" name="submit" id="submit">
+                    <input type="file" name="file-selector" id="file-selector" accept=".html" multiple>
                 </form>
+
+                <script src="src/js/file.js"></script>
             </div>
 
-            <div class="result hide">
+            <div id="results" class="result hide">
                 <div class="result-header">
                     <h2>Results</h2>
                 </div>
+                <p>
+                    <strong>Total</strong>
+                    <span id="total-count">0</span>
+
+                    <strong>Followers</strong>
+                    <span id="followers-count">0</span>
+
+                    <strong>Following</strong>
+                    <span id="following-count">0</span>
+                </p>
                 <table class="result-content">
                     <thead class="result-content-header">
                         <tr>
@@ -53,7 +62,7 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody class="result-content-body">
+                    <tbody id="results-table" class="result-content-body">
                         <tr class="empty">
                             <td class="result-content-body-item user">
                                 <a class="user-link" href="https://instagram.com/" target="_blank"></a>
