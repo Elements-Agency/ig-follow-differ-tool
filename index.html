@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="description" content="Instagram Follower vs Following Tool">
+    <meta name="keywords" content="Instagram, Followers, Following, Compare, Tool">
+    <meta name="author" content="Web Elements">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="English">
+    <meta name="distribution" content="global">
+
     <title>Instagram Follower vs Following Tool</title>
     <link rel="stylesheet" href="src/css/styles.css">
     <script src="src/js/compare.js"></script>
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
 </head>
 
 <body>
@@ -24,40 +37,53 @@
                 If you need instructions on how to download your followers and following, please <a href="#instructions">see the instructions below</a>.
             </p>
 
+            <br>
+
             <div class="form">
                 <form action="#" method="post" enctype="multipart/form-data">
-                    <label for="file-selector">Select the followers and following files:</label>
-                    <br>
-                    <input type="file" name="file-selector" id="file-selector" accept=".html" multiple>
-                </form>
-
-                <script src="src/js/file.js"></script>
+                    <div class="form-group">
+                        <label for="file-selector">
+                            <strong>Select the followers and following files:</strong>
+                        </label>
+                        <br>
+                        <input class="form-control form-control-file" type="file" name="file-selector" id="file-selector" accept=".html" multiple>
+                    </div>
+                <form>
             </div>
+
+            <br>
 
             <div id="results" class="result hide">
                 <div class="result-header">
-                    <h2>Results</h2>
+                    <h2>
+                        Results
+
+                        <button id="total-btn" type="button" class="btn btn-secondary active">
+                            <strong>Total</strong>
+                            <span class="badge text-bg-secondary" id="total-count">0</span>
+                        </button>
+    
+                        <button id="followers-btn" type="button" class="btn btn-secondary">
+                            <strong>Followers</strong>
+                            <span class="badge text-bg-secondary" id="followers-count">0</span>
+                        </button>
+    
+                        <button id="following-btn" type="button" class="btn btn-secondary">
+                            <strong>Followers</strong>
+                            <span class="badge text-bg-secondary" id="following-count">0</span>
+                        </button>
+                    </h2>
                 </div>
-                <p>
-                    <strong>Total</strong>
-                    <span id="total-count">0</span>
-
-                    <strong>Followers</strong>
-                    <span id="followers-count">0</span>
-
-                    <strong>Following</strong>
-                    <span id="following-count">0</span>
-                </p>
-                <table class="result-content">
+                <table class="result-content table">
                     <thead class="result-content-header">
                         <tr>
-                            <th class="result-content-header-item">
+                            <th class="result-content-header-item" scope="col">
                                 <h3>Username</h3>
                             
-                            <th class="result-content-header-item">
+                            <th class="result-content-header-item" scope="col">
                                 <h3>Followers</h3>
                             </th>
-                            <th class="result-content-header-item">
+                            <th class="result-content-header-item" scope="col">
                                 <h3>Following</h3>
                             </th>
                         </tr>
@@ -73,6 +99,8 @@
                     </tbody>
                 </table>
             </div>
+
+            <br>
 
             <div class="instructions" id="instructions">
                 <h2>Instructions</h2>
@@ -102,9 +130,20 @@
                 </p>
         </div>
 
-        <div class="footer">
-            <p>Provided Free by <a href="https://webelements.agency" target="_blank"><img src="src/img/webelements-horizontal.png" title="Web Elements Small Business Web Design" alt="Web Elements"></a></p>
-        </div>
+        <br>
+
+        <footer class="footer">
+            <p>
+                Provided Free By
+                <br>
+                <a href="https://webelements.agency" target="_blank"><img src="src/img/webelements-horizontal.png" title="Web Elements Small Business Web Design" alt="Web Elements"></a>
+            </p>
+        </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="src/js/file.js"></script>
+
 </body>
+
 </html>

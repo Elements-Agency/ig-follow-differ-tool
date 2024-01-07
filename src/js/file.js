@@ -30,17 +30,28 @@ function displayResults(resultsObj) {
     var followingCount = document.getElementById('following-count');
     followingCount.innerHTML = numberFormat(resultsObj.following.length);
 
-
     for (var i=0, max=results.length; i<max; i++) {
         var row = table.insertRow();
+
+        row.classList.add('user');
+
+        if (results[i].followers && results[i].following) {
+            row.classList.add('both');
+        }
+        if (results[i].followers) {
+            row.classList.add('follower');
+        }
+        if (results[i].following) {
+            row.classList.add('following');
+        }
 
         var user = row.insertCell();
         var followers = row.insertCell();
         var following = row.insertCell();
 
         user.innerHTML = '<a href="https://instagram.com/' + results[i].user + '">' + results[i].user + '</a>';
-        followers.innerHTML = results[i].followers ? 'Yes' : 'No';
-        following.innerHTML = results[i].following ? 'Yes' : 'No';
+        followers.innerHTML = results[i].followers ? '<i class="bi bi-check-circle text-success">Yes</i>' : '<i class="bi bi-x-circle text-danger">No</i>';
+        following.innerHTML = results[i].following ? '<i class="bi bi-check-circle text-success">Yes</i>' : '<i class="bi bi-x-circle text-danger">No</i>';
     }
 }
 
@@ -79,6 +90,51 @@ function readFile(file) {
     reader.readAsText(file);
 }
 
+function hideAll() {
+    var users = document.querySelectorAll('.user');
+    [].forEach.call(users, function(el) {
+        el.classList.add('hide');
+    });
+
+    document.getElementById('total-btn').classList.remove('active');
+    document.getElementById('followers-btn').classList.remove('active');
+    document.getElementById('following-btn').classList.remove('active');
+}
+
+function showAll() {
+    hideAll();
+
+    // query select user class elements
+    var users = document.querySelectorAll('.user');
+    [].forEach.call(users, function(el) {
+        el.classList.remove('hide');
+    });
+
+    document.getElementById('total-btn').classList.add('active');
+}
+
+function showFollowers() {
+    hideAll();
+
+    var users = document.querySelectorAll('.follower');
+    [].forEach.call(users, function(el) {
+        el.classList.remove('hide');
+    });
+
+    document.getElementById('followers-btn').classList.add('active');
+}
+
+function showFollowing() {
+    hideAll();
+
+    var users = document.querySelectorAll('.following');
+    [].forEach.call(users, function(el) {
+        el.classList.remove('hide');
+    });
+
+    document.getElementById('following-btn').classList.add('active');
+}
+
 (function() {
     const fileSelector = document.getElementById('file-selector');
 
@@ -88,4 +144,8 @@ function readFile(file) {
         readFile(fileList[0]);
         readFile(fileList[1]);
     });
+
+    document.getElementById('total-btn').addEventListener('click', showAll);
+    document.getElementById('following-btn').addEventListener('click', showFollowing);
+    document.getElementById('followers-btn').addEventListener('click', showFollowers);
 })();
